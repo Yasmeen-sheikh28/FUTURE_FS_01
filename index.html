@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Full-Stack Developer Portfolio</title>
+  <meta name="description" content="Yasmeen — aspiring full-stack developer and frontend enthusiast. Projects, skills, and contact." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+  <span class="hamburger"></span>
+</button>
+      <a class="brand" href="index.html">Personal Portfolio</a>
+      
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+<!-- Script to highlight active nav link -->
+<script>
+  const currentPage = window.location.pathname.split("/").pop(); 
+  const navLinks = document.querySelectorAll(".nav-menu a");
+
+  navLinks.forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+</script>
+
+  <main id="main">
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="container hero-inner">
+        <h1 class="fade-in">Hi, I'm Yasmeen sheikh</h1>
+        <p class="fade-in delay">Aspiring Full-Stack Developer — Frontend Enthusiast</p>
+        <div class="hero-buttons fade-in delay2">
+          <a href="project.html" class="btn primary">View Projects</a>
+          <a href="contact.html" class="btn outline">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>
+          I am an aspiring Full-Stack Developer with a strong focus on building modern, responsive, and user-friendly web applications.
+        </p>
+        <p>
+          My journey began with frontend technologies like HTML, CSS, and JavaScript, and I am now expanding into backend development to become a well-rounded engineer.
+        </p>
+        <p>
+          I enjoy turning ideas into functional products, paying attention to clean design, accessibility, and performance.
+        </p>
+        <p>
+          My goal is to gain hands-on experience through internships and collaborative projects, while continuously improving my skills and contributing to meaningful solutions.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Frontend</h3>
+            <ul>
+              <li>HTML5</li>
+              <li>CSS3 (Responsive Design, Flexbox, Grid)</li>
+              <li>JavaScript (ES6+)</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Backend</h3>
+            <ul>
+              <li>Node.js (Basics)</li>
+              <li>Express.js (Learning)</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Tools & Deployment</h3>
+            <ul>
+              <li>Git & GitHub (Version Control)</li>
+              <li>Netlify (Deployment)</li>
+              <li>VS Code</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:zohasheikh2810@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+        <a href="https://github.com/Yasmeen-sheikh28" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/yasmeen-sheikh-066b54380?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  navToggle.addEventListener('click', () => {
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !expanded);
+    navMenu.classList.toggle('open');
+  });
+</script>
+<script src="script.js"></script>
+
+
+</body>
+</html>

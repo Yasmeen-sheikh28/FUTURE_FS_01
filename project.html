@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects - Sulfath</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html">Personal Portfolio</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+       <span class="hamburger"></span>
+       </button>
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+<!-- Script to highlight active nav link -->
+<script>
+  const currentPage = window.location.pathname.split("/").pop(); 
+  const navLinks = document.querySelectorAll(".nav-menu a");
+
+  navLinks.forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+</script>
+
+  <!-- Page Content -->
+ <section id="projects" class="section">
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="projects-container">
+
+      <!-- Project 1 -->
+      <article class="project-card">
+        <h3>Personal Portfolio Website</h3>
+        <p>A responsive and professional portfolio showcasing my skills, projects, and contact information.</p>
+        <div class="tech-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Sulfath786/FUTURE_FS_01" target="_blank">GitHub</a>
+          <a href="PASTE_YOUR_NETLIFY_LINK_HERE" target="_blank">Live Demo</a>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project-card">
+        <h3>Client Lead Management System</h3>
+        <p>A mini CRM application to manage client leads, track follow-ups, and organize customer information.</p>
+        <div class="tech-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Node.js</span>
+        </div>
+        <div class="project-links">
+          <span class="status-badge coming-soon">Coming Soon</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+    <p>&copy; All rights reserved.</p>
+  </footer>
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  navToggle.addEventListener('click', () => {
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !expanded);
+    navMenu.classList.toggle('open'); // match your CSS
+  });
+</script>
+<script src="script.js"></script>
+</body>
+</html>
